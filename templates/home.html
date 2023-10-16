@@ -1,0 +1,140 @@
+{% load static %}
+<html>
+<head>
+    <title>Lap World</title>
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'hss/css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'hss/css/animate.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'hss/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'hss/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'hss/css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'hss/css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'hss/css/ionicons.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'hss/css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'hss/css/jquery.timepicker.css' %}">
+
+    
+    <link rel="stylesheet" href="{% static 'hss/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'hss/css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'hss/css/style.css' %}">
+</head>
+<style>
+.btn{
+    background-color: orangered;
+}
+</style>
+<body>
+ 
+<div class="hero-wrap hero-bread" style="background-image: url('/static/hss/images/bg_6.jpg'); height:30px">
+    <div class="container">
+        <a  class="btn btn-info" href="{% url 'logout' %}">LogOut</a>
+        <a class="btn btn-info float-right" href="{% url 'cart' %}"> My Cart</a>
+      <div class="row no-gutters slider-text align-items-center justify-content-center">
+        <div class="col-md-9 ftco-animate text-center">
+            <p class="breadcrumbs"><span class="mr-2"><a href="#"><b>Welcome</b></a></span><span><b>To </b></span><span><b>Home</b></span></p>
+          <h1 class="mb-0 bread">LAP WORLD</h1>
+          <h4 class="hi"><b>{{request.user.username}}</b></h4>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <section class="ftco-section bg-light">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-8 col-lg-12 ">
+                  <div class="row">
+                    {% for val in product %}
+                    <div class="col-sm-12 col-md-12 col-lg-3 ftco-animate d-flex">
+                        <div class="product d-flex flex-column">
+                          
+                            <a href="" class="img-prod"><img src="{{val.image.url}}" width="250px" height="250px">
+                          
+                                <div class="overlay"></div>
+                                
+                            </a>
+                              <div class="text py-3 pb-4 px-3">
+                                  <div class="d-flex">
+                                      <div class="cat">
+                                          <span>Lifestyle</span>
+                                      </div>
+                                      <div class="rating">
+                                          <p class="text-right mb-0">
+                                              <a href="#"><span class="ion-ios-star-outline"></span></a>
+                                              <a href="#"><span class="ion-ios-star-outline"></span></a>
+                                              <a href="#"><span class="ion-ios-star-outline"></span></a>
+                                              <a href="#"><span class="ion-ios-star-outline"></span></a>
+                                              <a href="#"><span class="ion-ios-star-outline"></span></a>
+                                          </p>
+                                      </div>
+                                  </div>
+                                  <div class="fw-bold text-black text-center"><b>{{val.name}}</b></div>
+                  
+                  
+                                <div class="fw-bold text-black text-center"><b>Rs.{{val.price}}/-</b><small class="fw-bol text-danger text-decoration-line-through">{{prod.price}}</small>
+        
+                                </div>
+                                  <p class="bottom-area d-flex px-3">
+                                      <a href="{% url 'product_view' val.id  %}" class="add-to-cart text-center py-2 mr-1"><span>Product Details<i class="ion-ios-add ml-1"></i></span></a>
+                                  </p>
+                              </div>
+                          </div>
+                      </div>
+                      
+                      {% endfor %}
+                      
+                  </div>
+
+
+               
+          
+                  </div>
+                </div>
+              </div>
+              </div>
+
+
+          
+
+
+                  
+                      
+  </section>
+      
+      
+  
+  
+  <script src="{% static 'hss/js/jquery.min.js' %}"></script>
+  <script src="{% static 'hss/js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'hss/js/popper.min.js' %}"></script>
+  <script src="{% static 'hss/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'hss/js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'hss/js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'hss/js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'hss/js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'hss/js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'hss/js/aos.js' %}"></script>
+  <script src="{% static 'hss/js/jquery.animateNumber.min.js' %}"></script>
+  <script src="{% static 'hss/js/bootstrap-datepicker.js' %}"></script>
+  <script src="{% static 'hss/js/scrollax.min.js' %}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="{% static 'hss/js/google-map.js' %}"></script>
+  <script src="{% static 'hss/js/main.js' %}"></script>
+
+
+  <script src="{% static 'hss/js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'hss/js/all.min' %}"></script>
+  <script src="{% static 'hss/js/myscript.js' %}"></script>
+
+</body>
+</html>

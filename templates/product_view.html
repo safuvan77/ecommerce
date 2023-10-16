@@ -1,0 +1,109 @@
+{% load static %}
+<html>
+<head>
+    <title>Lap World</title>
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="{% static 'hss/css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'hss/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'hss/css/animate.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'hss/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'hss/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'hss/css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'hss/css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'hss/css/ionicons.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'hss/css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'hss/css/jquery.timepicker.css' %}">
+
+    
+    <link rel="stylesheet" href="{% static 'hss/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'hss/css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'hss/css/style.css' %}">
+    <style>
+    .change{
+        line-break:anywhere;
+        
+    }
+    </style>
+</head>
+<body>
+   
+    <br>
+    <a href="{% url 'home' %}" class="btn btn-dark btn-md text-center ">Home</a>
+     
+<div class="container  mt-5 mb-5">
+    <div class="row flex justify-content-between">
+
+        <div class="img2 col-lg-5 mt-5 ">
+            <img src="{{prod.image.url}}"
+                class="image col-xs-6 col-sm-12 col-lg-12  mt-3 me-7 text-center w-100 h-75 border-0" alt="">
+        </div>
+
+
+        <div class="productdetail col-lg-7 mt-5 border ">
+            <h1 class="ms-2" style="font-family: Georgia; font-size:50px"><u>{{prod.name}}</u></h1>
+            
+            <h5 class="ms-3 mt-5" style=" font-size: 25px">Price : <b>Rs.{{prod.price}}/-</b> </h5>
+            <br>
+            
+            <hr>
+            <h3 class=" text-dark ms-3"> <b>Specifications</b></h3>
+            <hr>
+            <div class="change">
+                <ul class="fs-5 mb-3 me-3 " style="font-family: Georgia;">
+                    <li><b>{{prod.description}}</b></li>
+                </ul> 
+            </div>
+           
+
+            {% if prod.status == False %}
+            <div class="buttons text-center" style="font-family: Rajdhani;">
+
+                <form action="" class="d-inline">
+                    <button type="submit" class="btn btn-warning shadow px-3 py-1" ><a class="" style="color: rgb(0, 0, 0); font-size:18px;" href="{% url 'cartview' prod.id %}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to Cart</a> </button>
+                </form>
+                {% else %}
+                 <h4 style="text-align: center;" class="text-danger"><b>Out of stock</b></h4>
+                {% endif %}
+        
+                <br><br><br><br>
+            </div>
+        </div>
+    </div>
+</div>
+  
+  
+  <script src="{% static 'hss/js/jquery.min.js' %}"></script>
+  <script src="{% static 'hss/js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'hss/js/popper.min.js' %}"></script>
+  <script src="{% static 'hss/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'hss/js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'hss/js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'hss/js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'hss/js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'hss/js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'hss/js/aos.js' %}"></script>
+  <script src="{% static 'hss/js/jquery.animateNumber.min.js' %}"></script>
+  <script src="{% static 'hss/js/bootstrap-datepicker.js' %}"></script>
+  <script src="{% static 'hss/js/scrollax.min.js' %}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="{% static 'hss/js/google-map.js' %}"></script>
+  <script src="{% static 'hss/js/main.js' %}"></script>
+
+
+  <script src="{% static 'hss/js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'hss/js/all.min' %}"></script>
+  <script src="{% static 'hss/js/myscript.js' %}"></script>
+
+</body>
+</html>
